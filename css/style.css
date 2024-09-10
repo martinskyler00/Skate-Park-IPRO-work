@@ -7,6 +7,8 @@
     background-color: black;
     color: #fff;
     overflow: scroll;
+    display: flex;
+    flex-direction: column;
   }
   
   .banner {
@@ -150,7 +152,7 @@
     right: 0;
     background-color: grey;
     overflow: hidden;
-    width: 100%;
+    width: 100.8%;
     height: 99%;
     transform: scale(0);
     transition: .3s ease;
