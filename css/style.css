@@ -99,13 +99,22 @@ table {
 
 .container {
   position: relative;
-  width: 300px;
-  height: auto;
+  width: 100%; /* Ensure container spans full width */
+  max-width: 100%; /* Avoid overflow */
+  display: flex; /* Use Flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  overflow: hidden; /* Hide overflow to maintain aspect ratio */
+  margin: 0 auto; /* Center the container horizontally */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .container img {
-  width: 100%;
-  border-radius: 10px;
+  width: 100%; /* Make the image fill the container */
+  max-width: 400px; /* Set a maximum width for consistency */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove any space below the image */
+  object-fit: cover; /* Ensure images cover the container without stretching */
 }
 
 .overlay {
@@ -132,19 +141,20 @@ table {
 }
 
 #map {
-  width: 27vw;
-  height: 35vh;
+  width: 80%; /* Adjust width as needed */
+  max-width: 800px; /* Maximum width for larger screens */
+  height: 35vh; /* Height of the map */
   border-radius: 15px;
-  border-color: #FE5F55;
-  border-width: thick;
-  margin: 50px auto 25px; /* Added top margin to prevent overlap */
-  padding: 0px;
+  border: thick solid #FE5F55; /* Ensure border is defined properly */
+  margin: 0 auto; /* Center the map horizontally */
+  position: relative; /* Use relative positioning to move the map up */
+  top: -20px; /* Move the map up by 20px (adjust as needed) */
 }
 
 h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-top: 0px;
+  color: #fff; /* Ensure text color stands out */
+  font-size: 45px;
+  margin: 20px 0; /* Margin to ensure the text is attached to the map */
 }
 
 .grid {
@@ -167,6 +177,12 @@ footer {
   background-color: rgb(229, 140, 72);
   color: white;
   margin-top: auto;
+}
+
+.map-container {
+  padding: 20px; /* Add some padding around the map */
+  text-align: center; /* Center-align the text under the map */
+  position: relative; /* Establish a positioning context */
 }
 
 /* Responsive design for smaller screens */
@@ -208,7 +224,13 @@ footer {
 
   .container {
       width: 100%;
+      padding: 10px; /* Add padding for smaller screens if needed */
   }
+
+  .container img {
+    width: 100%; /* Adjust image width for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+}
 
   #map {
       width: 100%;
@@ -220,5 +242,12 @@ footer {
 
   h2 {
       font-size: 2rem;
+      margin: 10px 0;
+  }
+
+  #map{
+    width: 90%; /* Adjust width for smaller screens */
+    height: 40vh; /* Adjust height for smaller screens */
+    top: -15px; /* Adjust movement for smaller screens */
   }
 }
