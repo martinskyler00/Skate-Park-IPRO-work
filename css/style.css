@@ -99,7 +99,6 @@ body {
 .content h1 {
   font-size: 70px;
   position: relative;
-  bottom: 620px;
   text-decoration: underline;
 }
 
@@ -175,7 +174,6 @@ h2 {
 
 .grid div {
   flex: 1;
-  min-width: 300px;
   padding: 20px;
 }
 
@@ -183,7 +181,7 @@ footer {
   text-align: center;
   padding: 20px;
   background-color: rgb(229, 140, 72);
-  color: white;
+  color: black;
 }
 
 .map-container {
