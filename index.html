@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <title>GoGo's Skate Park</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
     
     <link rel="stylesheet" href="css/style.css" />
     <script async src="js/script.js"></script>
@@ -76,7 +78,15 @@
       </table>
     </div>
     <div id="map">
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTGmvq7HQkPOA1Ge67jowh0lZb4flAVHQ&callback=initMap" defer></script>
+      <script>
+        var map = L.map('map').setView([6.99182039288997, -161.8592678816402], 2);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        var marker = L.marker([6.99182039288997, -161.8592678816402]).addTo(map);
+        //marker.bindPopup("<b>Illinois Institute of Technology</b>").openPopup();
+        L.circle([50.5, 30.5], {radius: 200}).addTo(map);
+      </script>
       <h4>Find us on Google!</h4>
     </div>
     <h2>A place to GoGo to your Dreams!</h2>
